@@ -1,11 +1,34 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import LoginScreen from './src/screens/LoginScreen';
+import TasksScreen from './src/screens/TasksScreen';
+import TaskDetailsScreen from './src/screens/TaskDetailsScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View>
-      <Text>Beginning of the project</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="TasksScreen"
+          component={TasksScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="TaskDetailsScreen"
+          component={TaskDetailsScreen}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
