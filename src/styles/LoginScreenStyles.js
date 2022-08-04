@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   inputWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 30, //
   },
   input: {
     backgroundColor: colors.white,
@@ -66,6 +66,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
     backgroundColor: colors.blue,
     width: 300,
     height: 50,

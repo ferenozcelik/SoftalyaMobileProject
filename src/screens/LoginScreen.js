@@ -11,13 +11,14 @@ import React from 'react';
 import styles from '../styles/LoginScreenStyles';
 import logo from '../assets/images/Logo.png';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={[styles.loginHeaderBackground, styles.shadow]}>
         <Image source={logo} style={styles.loginHeaderLogo} />
         <Text style={styles.loginHeaderText}>AirBus</Text>
       </View>
+
       <View style={styles.titleWrapper}>
         <Text style={styles.title}>Sürücü Giriş</Text>
       </View>
@@ -37,12 +38,18 @@ const LoginScreen = () => {
             placeholderTextColor={'#9B9B9B'}
             secureTextEntry={true}
           />
-
-          <TouchableOpacity style={[styles.buttonWrapper, styles.shadow]}>
-            <Text style={styles.buttonText}>Giriş Yap</Text>
-          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
+
+      <View style={styles.buttonWrapper}>
+        <TouchableOpacity
+          style={[styles.button, styles.shadow]}
+          onPress={() => {
+            navigation.navigate('TasksScreen');
+          }}>
+          <Text style={styles.buttonText}>Giriş Yap</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
