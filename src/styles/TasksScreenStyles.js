@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5,
+    elevation: 3,
   },
   screenHeader: {
     backgroundColor: colors.white,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headerLogo: {
-    // LOGOYU ORTALAMANIN DAHA İYİ BİR YOLUNU BUL
+    // To-Do: LOGOYU ORTALAMANIN DAHA İYİ BİR YOLUNU BUL
     marginRight: width / 2 - 20,
     width: 40,
     height: 40,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   mapWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 10,
   },
   map: {
     width: 382,
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
   taskItemWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
   },
   taskItem: {
     backgroundColor: colors.white,
@@ -69,6 +68,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    marginBottom: 15,
   },
   taskItemTitle: {
     fontFamily: 'Lato-Bold',
@@ -89,6 +89,14 @@ const styles = StyleSheet.create({
   },
   nextIcon: {
     color: colors.darkGreen,
+  },
+  divider: {
+    borderBottomColor: colors.blue,
+    borderBottomWidth: 1,
+    width: 382,
+    marginTop: 15,
+    marginBottom: 2,
+    marginLeft: (width - 382) / 2,
   },
 });
 

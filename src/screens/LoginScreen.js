@@ -23,6 +23,7 @@ const LoginScreen = ({navigation}) => {
         <Text style={styles.title}>Sürücü Giriş</Text>
       </View>
 
+      {/* To-Do: KeyboardAvoidingView problemini çöz */}
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.inputWrapper}>

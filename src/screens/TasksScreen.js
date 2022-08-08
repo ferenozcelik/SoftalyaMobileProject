@@ -1,12 +1,4 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  FlatList,
-  ScrollView,
-  SafeAreaView,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
 import React from 'react';
 import styles from '../styles/TasksScreenStyles';
 import logo from '../assets/images/Logo.png';
@@ -22,7 +14,12 @@ const TasksScreen = ({navigation}) => {
 
   const renderTasks = ({item}) => {
     return (
-      <View style={styles.taskItemWrapper}>
+      <View
+        style={[
+          styles.taskItemWrapper,
+          {marginTop: item.id === 'task-1' ? 15 : 0},
+          // ilk item için marginTop ver, diğerleri için 0
+        ]}>
         <View style={[styles.taskItem, styles.shadow]}>
           {/* textler bir view içine alınabilir */}
           <Text style={styles.taskItemTitle}>{item.title}</Text>
@@ -30,7 +27,10 @@ const TasksScreen = ({navigation}) => {
 
           <View style={styles.nextIconWrapper}>
             <TouchableOpacity
-              hitSlop={{top: 15, bottom: 15, right: 10, left: 20}}>
+              hitSlop={{top: 15, bottom: 15, right: 10, left: 20}}
+              onPress={() => {
+                navigation.navigate('TaskDetailsScreen', {item: item});
+              }}>
               <Feather
                 name="arrow-right-circle"
                 size={40}
@@ -55,7 +55,7 @@ const TasksScreen = ({navigation}) => {
         <Image source={logo} style={styles.headerLogo} />
       </View>
 
-      {/* GÖLGE YOK OLUYOR */}
+      {/* To-Do: GÖLGE YOK OLUYOR */}
       <View style={styles.titleWrapper}>
         <Text style={styles.title}>Görevler</Text>
       </View>
@@ -64,13 +64,15 @@ const TasksScreen = ({navigation}) => {
         <Image source={map} style={styles.map} />
       </View>
 
-      <View style={styles.tasksWrapper}>
+      <View style={styles.divider} />
+
+      {/* ScrollView içinde FlatList kullanırsan performans hatası verir. FlatList'i bir View içine alıp flex={1} vererek scroll yapabilirsin.
+      To-Do: Başka bir çözümü var mı? */}
+      <View flex={1} style={styles.tasksWrapper}>
         <FlatList
-          ListHeaderComponent={<></>}
           data={tasksData}
           renderItem={renderTasks}
           keyExtractor={item => item.id}
-          ListFooterComponent={<></>}
         />
       </View>
     </View>
