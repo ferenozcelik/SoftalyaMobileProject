@@ -1,20 +1,18 @@
 import {View, Text, TouchableOpacity, Image, Alert} from 'react-native';
 import React, {useState} from 'react';
-import styles from '../styles/TaskDetailsScreenStyles';
+import styles from '../styles/TaskTrackerScreenStyles';
 import logo from '../assets/images/Logo.png';
-import map2 from '../assets/images/map2.png';
+import map3 from '../assets/images/map3.png';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-const TaskDetailsScreen = ({route, navigation}) => {
-  // const [pressed, setPressed] = useState(false); //
-
+const TaskTrackerScreen = ({route, navigation}) => {
   const {item} = route.params;
   return (
     <View style={styles.container}>
       <View style={[styles.screenHeader, styles.shadow]}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('TasksScreen');
+            navigation.navigate('TaskDetailsScreen', {item: item});
           }}>
           <Entypo name="chevron-left" style={styles.backIcon} size={32} />
         </TouchableOpacity>
@@ -23,11 +21,11 @@ const TaskDetailsScreen = ({route, navigation}) => {
 
       {/* To-Do: GÖLGE YOK OLUYOR */}
       <View style={styles.titleWrapper}>
-        <Text style={styles.title}>Detaylar</Text>
+        <Text style={styles.title}>Sürüş Detayları</Text>
       </View>
 
       <View style={styles.mapWrapper}>
-        <Image source={map2} style={styles.map} />
+        <Image source={map3} style={styles.map} />
       </View>
 
       <View style={styles.taskDetailsWrapper}>
@@ -39,36 +37,20 @@ const TaskDetailsScreen = ({route, navigation}) => {
 
       <View style={styles.buttonWrapper}>
         <TouchableOpacity
-          style={[styles.acceptButton, styles.shadow]}
-          // disabled={!pressed ? false : true} //
-          onPress={() => {
-            // Alert.alert(
-            //   'Test',
-            //   'Görev kabul edildi',
-            //   [{text: 'Tamam', style: 'default'}],
-            //   {cancelable: true},
-            // );
-            navigation.navigate('TaskTrackerScreen', {item: item});
-            // setPressed(true); //
-          }}>
-          <Text style={styles.buttonText}>Kabul Et</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.rejectButton, styles.shadow]}
+          style={[styles.startRideButton, styles.shadow]}
           onPress={() => {
             Alert.alert(
               'Test',
-              'Görev reddedildi',
+              'Sürüş başladı',
               [{text: 'Tamam', style: 'default'}],
               {cancelable: true},
             );
           }}>
-          <Text style={styles.buttonText}>Reddet</Text>
+          <Text style={styles.buttonText}>Sürüşü Başlat</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default TaskDetailsScreen;
+export default TaskTrackerScreen;
