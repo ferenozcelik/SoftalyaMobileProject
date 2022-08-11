@@ -6,6 +6,8 @@ import {
   KeyboardAvoidingView,
   TextInput,
   TouchableOpacity,
+  Platform,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import styles from '../styles/LoginScreenStyles';
@@ -13,7 +15,7 @@ import logo from '../assets/images/Logo.png';
 
 const LoginScreen = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={[styles.loginHeaderBackground, styles.shadow]}>
         <Image source={logo} style={styles.loginHeaderLogo} />
         <Text style={styles.loginHeaderText}>AirBus</Text>
@@ -23,9 +25,9 @@ const LoginScreen = ({navigation}) => {
         <Text style={styles.title}>Sürücü Giriş</Text>
       </View>
 
-      {/* To-Do: KeyboardAvoidingView problemini çöz */}
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      <View
+        // behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={{flex: 1}}>
         <View style={styles.inputWrapper}>
           <TextInput
             style={[styles.input, styles.shadow]}
@@ -40,7 +42,7 @@ const LoginScreen = ({navigation}) => {
             secureTextEntry={true}
           />
         </View>
-      </KeyboardAvoidingView>
+      </View>
 
       <View style={styles.buttonWrapper}>
         <TouchableOpacity
@@ -51,7 +53,7 @@ const LoginScreen = ({navigation}) => {
           <Text style={styles.buttonText}>Giriş Yap</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

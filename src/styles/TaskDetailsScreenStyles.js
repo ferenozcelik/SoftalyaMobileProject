@@ -2,6 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../assets/colors/colors';
 
 const width = Dimensions.get('window').width;
+const IMAGE_SIZE = 40;
 
 const styles = StyleSheet.create({
   container: {
@@ -27,9 +28,13 @@ const styles = StyleSheet.create({
   },
   headerLogo: {
     // To-Do: LOGOYU ORTALAMANIN DAHA İYİ BİR YOLUNU BUL
-    marginRight: width / 2 - 20,
-    width: 40,
-    height: 40,
+    // marginRight: width / 2 - 20,
+    // width: 40,
+    // height: 40,
+    position: 'absolute',
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
+    left: width / 2 - IMAGE_SIZE / 2,
   },
   backIcon: {
     color: colors.blue,

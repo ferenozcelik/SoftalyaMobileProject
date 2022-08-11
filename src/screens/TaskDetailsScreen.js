@@ -55,14 +55,15 @@ const TaskDetailsScreen = ({route, navigation}) => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.rejectButton, styles.shadow]}
+          style={styles.rejectButton}
           onPress={() => {
-            Alert.alert(
-              'Test',
-              'Görev reddedildi',
-              [{text: 'Tamam', style: 'default'}],
-              {cancelable: true},
-            );
+            // Alert.alert(
+            //   'Test',
+            //   'Görev reddedildi',
+            //   [{text: 'Tamam', style: 'default'}],
+            //   {cancelable: true},
+            // );
+            navigation.navigate('TasksScreen');
           }}>
           <Text style={styles.buttonText}>Reddet</Text>
         </TouchableOpacity>

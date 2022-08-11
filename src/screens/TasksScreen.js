@@ -45,7 +45,7 @@ const TasksScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.screenHeader, styles.shadow]}>
+      <View style={styles.screenHeader}>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('LoginScreen');

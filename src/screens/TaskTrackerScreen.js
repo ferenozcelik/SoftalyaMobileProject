@@ -7,9 +7,12 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 const TaskTrackerScreen = ({route, navigation}) => {
   const {item} = route.params;
+
+  const [rideStarted, setRideStarted] = useState(false);
+
   return (
     <View style={styles.container}>
-      <View style={[styles.screenHeader, styles.shadow]}>
+      <View style={styles.screenHeader}>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('TaskDetailsScreen', {item: item});
@@ -40,11 +43,12 @@ const TaskTrackerScreen = ({route, navigation}) => {
           style={[styles.startRideButton, styles.shadow]}
           onPress={() => {
             Alert.alert(
-              'Test',
-              'Sürüş başladı',
+              'ÖSYM',
+              'Yemek seçiminin süresi dolmuştur',
               [{text: 'Tamam', style: 'default'}],
               {cancelable: true},
             );
+            setRideStarted(true);
           }}>
           <Text style={styles.buttonText}>Sürüşü Başlat</Text>
         </TouchableOpacity>
