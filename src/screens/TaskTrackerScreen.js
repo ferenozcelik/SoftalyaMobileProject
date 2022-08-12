@@ -17,7 +17,9 @@ const TaskTrackerScreen = ({route, navigation}) => {
           onPress={() => {
             navigation.navigate('TaskDetailsScreen', {item: item});
           }}>
-          <Entypo name="chevron-left" style={styles.backIcon} size={32} />
+          {!rideStarted && (
+            <Entypo name="chevron-left" style={styles.backIcon} size={32} />
+          )}
         </TouchableOpacity>
         <Image source={logo} style={styles.headerLogo} />
       </View>
@@ -38,21 +40,41 @@ const TaskTrackerScreen = ({route, navigation}) => {
         </View>
       </View>
 
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity
-          style={[styles.startRideButton, styles.shadow]}
-          onPress={() => {
-            Alert.alert(
-              'ÖSYM',
-              'Yemek seçiminin süresi dolmuştur',
-              [{text: 'Tamam', style: 'default'}],
-              {cancelable: true},
-            );
-            setRideStarted(true);
-          }}>
-          <Text style={styles.buttonText}>Sürüşü Başlat</Text>
-        </TouchableOpacity>
-      </View>
+      {!rideStarted && (
+        <View style={styles.buttonWrapper}>
+          <TouchableOpacity
+            style={[styles.startRideButton, styles.shadow]}
+            onPress={() => {
+              Alert.alert(
+                'Bilgilendirme',
+                'Sürüş başladı',
+                [{text: 'Tamam', style: 'default'}],
+                {cancelable: true},
+              );
+              setRideStarted(true);
+            }}>
+            <Text style={styles.buttonText}>Sürüşü Başlat</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {rideStarted && (
+        <View style={styles.buttonWrapper}>
+          <TouchableOpacity
+            style={[styles.endRideButton, styles.shadow]}
+            onPress={() => {
+              Alert.alert(
+                'Bilgilendirme',
+                'Sürüş tamamlandı',
+                [{text: 'Tamam', style: 'default'}],
+                {cancelable: true},
+              );
+              setRideStarted(false);
+            }}>
+            <Text style={styles.buttonText}>Sürüşü Bitir</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };

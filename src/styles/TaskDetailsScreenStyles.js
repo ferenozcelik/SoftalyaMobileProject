@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 3,
+    elevation: 2,
   },
   screenHeader: {
     backgroundColor: colors.white,
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   acceptButton: {
     width: 140,
     height: 40,
-    backgroundColor: colors.lightGreen,
+    backgroundColor: colors.darkGreen,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,

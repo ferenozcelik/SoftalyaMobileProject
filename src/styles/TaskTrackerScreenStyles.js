@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 3,
+    elevation: 2,
   },
   screenHeader: {
     backgroundColor: colors.white,
@@ -95,10 +95,20 @@ const styles = StyleSheet.create({
   startRideButton: {
     width: 170,
     height: 50,
-    backgroundColor: colors.blue,
+    backgroundColor: colors.darkGreen,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
+    marginBottom: 5,
+  },
+  endRideButton: {
+    width: 170,
+    height: 50,
+    backgroundColor: colors.lightRed,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginBottom: 5,
   },
   buttonText: {
     fontFamily: 'Lato-Bold',

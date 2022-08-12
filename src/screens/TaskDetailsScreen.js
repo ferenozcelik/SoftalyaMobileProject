@@ -55,7 +55,7 @@ const TaskDetailsScreen = ({route, navigation}) => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.rejectButton}
+          style={[styles.rejectButton, styles.shadow]}
           onPress={() => {
             // Alert.alert(
             //   'Test',

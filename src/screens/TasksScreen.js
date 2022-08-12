@@ -27,7 +27,7 @@ const TasksScreen = ({navigation}) => {
 
           <View style={styles.nextIconWrapper}>
             <TouchableOpacity
-              hitSlop={{top: 15, bottom: 15, right: 10, left: 20}}
+              hitSlop={{top: 50, bottom: 8, right: 10, left: 70}}
               onPress={() => {
                 navigation.navigate('TaskDetailsScreen', {item: item});
               }}>
