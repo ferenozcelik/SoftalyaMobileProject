@@ -19,12 +19,12 @@ const Router = () => {
         <Stack.Screen
           name="TaskPage"
           component={TaskPage}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="DetailPages"
           component={DetailPages}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

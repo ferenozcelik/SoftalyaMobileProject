@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import styles from './TaskPage.style';
-import TaskComponent from './TaskComponent';
 import data from '../../../data.json';
 import colors from '../../../assets/colors/colors';
 export default function TaskPage({navigation}) {
@@ -31,6 +30,13 @@ export default function TaskPage({navigation}) {
   );
   return (
     <View style={styles.container}>
+      <View style={styles.header_logo}>
+      <Image
+          style={styles.image2}
+          source={require('../../../assets/images/logo2.png')}
+        />
+        <Text style={styles.header_text}>AIRBUS</Text>
+      </View>
       <View style={styles.header}>
         <Text style={styles.task_text}>Görevler</Text>
       </View>
@@ -40,7 +46,7 @@ export default function TaskPage({navigation}) {
           source={require('../../../assets/images/map.png')}
         />
       </View>
-      <View>
+      <View style={{flex:1}}>
         <FlatList
           data={list}
           renderItem={renderData}

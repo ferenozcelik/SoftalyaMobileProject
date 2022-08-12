@@ -27,5 +27,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 30,
   },
+  image2: {
+    height: 40,
+    width: 40,
+    marginRight: 1,
+  },
+  header_logo: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    flexDirection:'row',
+  },
+  header_text:{
+    fontSize:24,
+    fontWeight:'bold',
+    marginLeft:20,
+    color:'black',
+
+  }
 });
 export default styles;
