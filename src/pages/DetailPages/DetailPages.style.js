@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../../assets/colors/colors';
-import color from '../../../assets/colors/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    backgroundColor: color.blue,
+    backgroundColor: colors.blue,
     height: 60,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
@@ -88,9 +87,7 @@ const styles = StyleSheet.create({
   },
   header_logo: {
     justifyContent: 'flex-start',
-
     flexDirection: 'row',
-
     backgroundColor: 'white',
   },
   backIcon: {

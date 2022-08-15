@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './DetailPages.style';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import styles from '../MapPages/MapPages.style';
+import {View, Text, Image, Button, TouchableOpacity} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
-import Feather from 'react-native-vector-icons/Feather';
-const DetailPages = ({navigation, route}) => {
+
+const MapPages = ({navigation, route}) => {
   const {item} = route.params;
   return (
     <View style={styles.container}>
@@ -29,20 +29,7 @@ const DetailPages = ({navigation, route}) => {
         <Text style={styles.detay_title}>{item.title}</Text>
         <Text style={styles.detay}>{item.description}</Text>
       </View>
-      <View style={styles.button}>
-        <TouchableOpacity
-          style={styles.btn_k}
-          onPress={() => navigation.navigate('MapPages', {item: item})}>
-          <Text style={styles.txt}>Kabul Et</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.btn_r}
-          onPress={() => {}}
-          title="Reddet">
-          <Text style={styles.txt_r}>Reddet</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };
-export default DetailPages;
+export default MapPages;

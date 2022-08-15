@@ -9,13 +9,14 @@ import {
 import React from 'react';
 import styles from './LoginPages.style';
 
+
 export default function LoginPages({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.head_container}>
         <Image
           style={styles.image}
-          source={require('../../../assets/images/logo.png')}
+          source={require('../../../assets/images/logo2.png')}
         />
         <Text style={styles.bottom_title}>AirBus</Text>
       </View>

@@ -2,14 +2,14 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import colors from '../../../assets/colors/colors';
 
-const TaskComponent = props => {
+const TaskComponent = ({product, onSelect}) => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.title}>{props.task.title}</Text>
-        <Text style={styles.description}>{props.task.description}</Text>
+        <Text style={styles.title}>{product.title}</Text>
+        <Text style={styles.description}>{product.description}</Text>
         <View style={styles.icon}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onSelect}>
             <Image
               style={styles.image}
               source={require('../../../assets/images/icon.jpg')}

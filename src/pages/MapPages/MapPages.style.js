@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import color from '../../../assets/colors/colors';
 import colors from '../../../assets/colors/colors';
 
 const styles = StyleSheet.create({
@@ -8,7 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    backgroundColor: color.blue,
+    backgroundColor: colors.blue,
     height: 60,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   image: {
-    height: 200,
+    height: 350,
     width: 350,
   },
   map_container: {
@@ -28,20 +27,45 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 30,
   },
+  header_logo: {
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    backgroundColor: 'white',
+  
+  
+  },
   image2: {
     height: 40,
     width: 40,
-    marginLeft: 160,
-  },
-  header_logo: {
-    justifyContent: 'flex-start',
-    backgroundColor: 'white',
-    flexDirection: 'row',
-  },
+    marginRight: 5,
+    marginLeft: 170,
 
-  backIcon: {
+    
+  },
+  map_container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 30,
+  },
+  box: {
+    backgroundColor: 'white',
+    color: 'white',
+    height: 150,
+    width: 360,
+    margin: 15,
+    marginTop:1,
+    marginRight: 15,
+    padding: 10,
+    marginBottom: 0,
+    borderRadius: 30,
+  },
+  detay_title: {
+    fontSize: 30,
     color: colors.blue,
-    marginLeft: 10,
+    fontWeight: 'bold',
+  },
+  detay: {
+    fontSize: 20,
   },
 });
 export default styles;

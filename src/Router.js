@@ -1,10 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {View, Text} from 'react-native';
+
 import LoginPages from './pages/LoginPages/LoginPages';
 import TaskPage from './pages/TaskPage/TaskPage';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DetailPages from './pages/DetailPages/DetailPages';
+import MapPages from './pages/MapPages/MapPages';
 
 const Stack = createNativeStackNavigator();
 const Router = () => {
@@ -24,6 +25,11 @@ const Router = () => {
         <Stack.Screen
           name="DetailPages"
           component={DetailPages}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MapPages"
+          component={MapPages}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
