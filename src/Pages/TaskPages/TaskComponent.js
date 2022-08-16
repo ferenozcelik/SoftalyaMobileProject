@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import color from '../../../assets/color/color';
+
 const TaskComponent = ({product, onSelect}) => {
   return (
     <View>

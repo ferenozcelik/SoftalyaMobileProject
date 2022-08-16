@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, Image, FlatList} from 'react-native';
 import styles from './TaskPagesStyle';
 import data from '../../../data.json';
 
