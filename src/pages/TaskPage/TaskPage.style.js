@@ -24,9 +24,7 @@ const styles = StyleSheet.create({
     width: 350,
   },
   map_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
+    height:250,
   },
   image2: {
     height: 40,
@@ -37,11 +35,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     backgroundColor: 'white',
     flexDirection: 'row',
+ 
   },
 
   backIcon: {
     color: colors.blue,
     marginLeft: 10,
+
   },
 });
 export default styles;

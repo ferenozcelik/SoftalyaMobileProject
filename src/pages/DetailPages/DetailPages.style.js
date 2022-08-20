@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     width: 350,
   },
   map_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
+  height:250,
+ 
+    
   },
   box: {
     backgroundColor: 'white',

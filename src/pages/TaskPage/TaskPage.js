@@ -5,11 +5,13 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  SafeAreaView
 } from 'react-native';
 import React, {useState} from 'react';
+import MapView from 'react-native-maps';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './TaskPage.style';
 import data from '../../../data.json';
-import Entypo from 'react-native-vector-icons/Entypo';
 import TaskComponent from './TaskComponent';
 
 export default function TaskPage({navigation}) {
@@ -24,7 +26,7 @@ export default function TaskPage({navigation}) {
     <View style={styles.container}>
       <View style={styles.header_logo}>
         <TouchableOpacity onPress={() => navigation.navigate('LoginPages')}>
-          <Entypo name="chevron-left" style={styles.backIcon} size={32} />
+        <Icon name='chevron-left' size ={40} color= 'black'  />
         </TouchableOpacity>
         <Image
           style={styles.image2}
@@ -36,10 +38,9 @@ export default function TaskPage({navigation}) {
         <Text style={styles.task_text}>Görevler</Text>
       </View>
       <View style={styles.map_container}>
-        <Image
-          style={styles.image}
-          source={require('../../../assets/images/map.png')}
-        />
+      <SafeAreaView style={{flex:1}}>
+          <MapView provider="google" style={{flex:1}}/>
+        </SafeAreaView>
       </View>
       <View style={{flex: 1}}>
         <FlatList

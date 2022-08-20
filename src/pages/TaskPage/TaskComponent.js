@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import colors from '../../../assets/colors/colors';
-
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const TaskComponent = ({product, onSelect}) => {
   return (
     <View>
@@ -10,10 +10,7 @@ const TaskComponent = ({product, onSelect}) => {
         <Text style={styles.description}>{product.description}</Text>
         <View style={styles.icon}>
           <TouchableOpacity onPress={onSelect}>
-            <Image
-              style={styles.image}
-              source={require('../../../assets/images/icon.jpg')}
-            />
+            <Icon name='arrow-right-bold' size ={25} color= '#1E62F0'  />
           </TouchableOpacity>
         </View>
       </View>
@@ -39,7 +36,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     alignItems: 'flex-end',
-    margin: 10,
+    margin: 5,
   },
   image: {
     height: 20,

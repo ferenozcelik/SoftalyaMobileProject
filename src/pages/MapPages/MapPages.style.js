@@ -43,9 +43,7 @@ const styles = StyleSheet.create({
     
   },
   map_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
+    height:450,
   },
   box: {
     backgroundColor: 'white',
