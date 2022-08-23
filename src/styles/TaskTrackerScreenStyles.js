@@ -57,10 +57,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
+    overflow: 'hidden',
+    alignSelf: 'center',
+    borderRadius: 15,
   },
   map: {
     width: 382,
-    height: 360,
+    height: 400,
   },
   taskDetailsWrapper: {
     alignItems: 'center',
@@ -69,9 +72,9 @@ const styles = StyleSheet.create({
   taskDetailsBox: {
     backgroundColor: colors.white,
     width: 370,
-    height: 100,
+    height: 70,
     borderRadius: 15,
-    marginTop: 10,
+    marginTop: 5,
   },
   taskDetailsTitle: {
     fontFamily: 'Lato-Bold',

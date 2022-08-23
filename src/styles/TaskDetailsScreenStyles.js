@@ -58,6 +58,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 10,
     marginBottom: 15,
+    overflow: 'hidden',
+    alignSelf: 'center',
+    borderRadius: 15,
   },
   map: {
     width: 382,

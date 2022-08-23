@@ -7,9 +7,11 @@ import task_marker from '../assets/images/task_marker.png';
 import driverData from '../assets/data/driverData';
 import driver_marker from '../assets/images/driver_marker.png';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import MapViewDirections from 'react-native-maps-directions';
 
 const TaskTrackerScreen = ({route, navigation}) => {
   const {item} = route.params;
+  const driver = driverData[0];
 
   const [rideState, setRideState] = useState(false);
 
@@ -42,6 +44,21 @@ const TaskTrackerScreen = ({route, navigation}) => {
             latitudeDelta: 0.08,
             longitudeDelta: 0.08,
           }}>
+          {/* Rota Çizme 
+          <MapViewDirections
+            origin={{
+              latitude: 36.87172158465723,
+              longtiude: 30.63644210996223,
+            }}
+            destination={{
+              latitude: 36.92437723092483,
+              longtiude: 30.737041367753758,
+            }}
+            apikey={'apikey'}
+          /> 
+          */}
+
+          {/* Task marker */}
           <Marker
             coordinate={{
               latitude: item.latitude,
@@ -66,6 +83,17 @@ const TaskTrackerScreen = ({route, navigation}) => {
               />
             );
           })}
+
+          {/* map() kullanmadan Driver marker
+          <Marker
+            coordinate={{
+              latitude: driver.latitude,
+              longitude: driver.longitude,
+            }}
+            title={driver.title}
+            image={driver_marker}
+          /> 
+          */}
         </MapView>
       </View>
 

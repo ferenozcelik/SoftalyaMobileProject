@@ -57,9 +57,12 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   mapWrapper: {
-    alignItems: 'center',
+    alignItems: 'center', // overrided
     justifyContent: 'center',
     marginTop: 10,
+    overflow: 'hidden',
+    alignSelf: 'center',
+    borderRadius: 15,
   },
   map: {
     width: 382,

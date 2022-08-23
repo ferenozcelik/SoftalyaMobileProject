@@ -115,7 +115,7 @@ const TasksScreen = ({navigation}) => {
 
       {/* ScrollView içinde FlatList kullanırsan performans hatası verir. FlatList'i bir View içine alıp flex={1} vererek scroll yapabilirsin.
       To-Do: Başka bir çözümü var mı? */}
-      <View flex={1} style={styles.tasksWrapper}>
+      <View flex={1}>
         <FlatList
           data={tasksData}
           renderItem={renderTasks}

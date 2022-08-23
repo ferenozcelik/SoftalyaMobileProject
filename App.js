@@ -21,7 +21,11 @@ const App = () => {
         <Stack.Screen
           name="TasksScreen"
           component={TasksScreen}
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+            headerLeft: null,
+            gestureEnabled: false,
+          }}
         />
         <Stack.Screen
           name="TaskDetailsScreen"
