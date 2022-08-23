@@ -2,12 +2,13 @@ import {View, Text, TouchableOpacity, Image, Alert} from 'react-native';
 import React, {useState} from 'react';
 import styles from '../styles/TaskDetailsScreenStyles';
 import logo from '../assets/images/Logo.png';
-import map2 from '../assets/images/map2.png';
+import task_marker from '../assets/images/task_marker.png';
+import driverData from '../assets/data/driverData';
+import driver_marker from '../assets/images/driver_marker.png';
 import Entypo from 'react-native-vector-icons/Entypo';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 const TaskDetailsScreen = ({route, navigation}) => {
-  // const [pressed, setPressed] = useState(false); //
-
   const {item} = route.params;
   return (
     <View style={styles.container}>
@@ -21,13 +22,46 @@ const TaskDetailsScreen = ({route, navigation}) => {
         <Image source={logo} style={styles.headerLogo} />
       </View>
 
-      {/* To-Do: GÖLGE YOK OLUYOR */}
       <View style={styles.titleWrapper}>
         <Text style={styles.title}>Detaylar</Text>
       </View>
 
       <View style={styles.mapWrapper}>
-        <Image source={map2} style={styles.map} />
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.map}
+          zoomEnabled={true}
+          initialRegion={{
+            latitude: item.latitude, // 36.884804
+            longitude: item.longitude, // 30.704044
+            latitudeDelta: 0.08,
+            longitudeDelta: 0.08,
+          }}>
+          <Marker
+            coordinate={{
+              latitude: item.latitude,
+              longitude: item.longitude,
+            }}
+            title={item.title}
+            description={item.description}
+            image={task_marker}
+          />
+
+          {/* Driver marker */}
+          {driverData.map(driver => {
+            return (
+              <Marker
+                coordinate={{
+                  latitude: driver.latitude,
+                  longitude: driver.longitude,
+                }}
+                title={driver.title}
+                image={driver_marker}
+                key={driver.id}
+              />
+            );
+          })}
+        </MapView>
       </View>
 
       <View style={styles.taskDetailsWrapper}>

@@ -1,15 +1,23 @@
-import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import styles from '../styles/TasksScreenStyles';
 import logo from '../assets/images/Logo.png';
-import map from '../assets/images/map.png';
+import task_marker from '../assets/images/task_marker.png';
+import driver_marker from '../assets/images/driver_marker.png';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
-import colors from '../assets/colors/colors';
 import tasksData from '../assets/data/tasksData';
+import driverData from '../assets/data/driverData';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 const TasksScreen = ({navigation}) => {
-  // component kullanımı
   // const renderSong = ({item}) => <SongKart song={item}/>
 
   const renderTasks = ({item}) => {
@@ -17,7 +25,7 @@ const TasksScreen = ({navigation}) => {
       <View
         style={[
           styles.taskItemWrapper,
-          {marginTop: item.id === 'task-1' ? 15 : 0},
+          {marginTop: item.id === 'task-1' ? 10 : 0},
           // ilk item için marginTop ver, diğerleri için 0
         ]}>
         <View style={[styles.taskItem, styles.shadow]}>
@@ -55,13 +63,52 @@ const TasksScreen = ({navigation}) => {
         <Image source={logo} style={styles.headerLogo} />
       </View>
 
-      {/* To-Do: GÖLGE YOK OLUYOR */}
       <View style={styles.titleWrapper}>
         <Text style={styles.title}>Görevler</Text>
       </View>
 
       <View style={styles.mapWrapper}>
-        <Image source={map} style={styles.map} />
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.map}
+          zoomEnabled={true}
+          initialRegion={{
+            latitude: 36.90610316958342,
+            longitude: 30.691201472660907,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}>
+          {/* Markers */}
+          {tasksData.map(task => {
+            return (
+              <Marker
+                coordinate={{
+                  latitude: task.latitude,
+                  longitude: task.longitude,
+                }}
+                title={task.title}
+                description={task.description}
+                image={task_marker}
+                key={task.id}
+                // keyExtractor={task => task.id} ERROR
+              />
+            );
+          })}
+          {/* Driver marker */}
+          {driverData.map(driver => {
+            return (
+              <Marker
+                coordinate={{
+                  latitude: driver.latitude,
+                  longitude: driver.longitude,
+                }}
+                title={driver.title}
+                image={driver_marker}
+                key={driver.id}
+              />
+            );
+          })}
+        </MapView>
       </View>
 
       <View style={styles.divider} />

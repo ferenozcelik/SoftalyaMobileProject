@@ -9,6 +9,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.lightGray,
   },
+  body: {
+    flex: 1,
+  },
   shadow: {
     shadowColor: '#000000',
     shadowOffset: {
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
   },
   map: {
     width: 382,
-    height: 200,
+    height: 300,
   },
   taskItemWrapper: {
     alignItems: 'center',
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    marginBottom: 15,
+    marginBottom: 10,
   },
   taskItemTitle: {
     fontFamily: 'Lato-Bold',
@@ -99,8 +102,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.blue,
     borderBottomWidth: 1,
     width: 382,
-    marginTop: 15,
-    marginBottom: 2,
+    marginTop: 10,
     marginLeft: (width - 382) / 2,
   },
 });

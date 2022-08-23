@@ -57,10 +57,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
+    marginBottom: 15,
   },
   map: {
     width: 382,
-    height: 230,
+    height: 300,
   },
   taskDetailsWrapper: {
     alignItems: 'center',
@@ -69,9 +70,8 @@ const styles = StyleSheet.create({
   taskDetailsBox: {
     backgroundColor: colors.white,
     width: 370,
-    height: 230,
+    height: 150,
     borderRadius: 15,
-    marginTop: 15,
   },
   taskDetailsTitle: {
     fontFamily: 'Lato-Bold',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   acceptButton: {
-    width: 140,
+    width: 150,
     height: 40,
     backgroundColor: colors.darkGreen,
     alignItems: 'center',
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   rejectButton: {
-    width: 140,
+    width: 150,
     height: 40,
     backgroundColor: colors.lightRed,
     alignItems: 'center',
