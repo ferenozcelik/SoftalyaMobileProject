@@ -6,10 +6,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9E0EA',
     flex: 1,
   },
-  image_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
+  map_container: {
+    height: 400,
   },
   bass: {
     flexDirection: 'row',
@@ -20,7 +18,7 @@ const styles = StyleSheet.create({
   img: {
     width: 45,
     height: 45,
-    marginLeft: 100,
+    marginLeft: 70,
   },
   head_title: {
     color: color.blue,

@@ -25,10 +25,9 @@ const styles = StyleSheet.create({
     height: 200,
     width: 350,
   },
-  image_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
+  map_container: {
+    height: 250,
+    marginBottom: 0,
   },
   bass: {
     flexDirection: 'row',
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
   img: {
     width: 45,
     height: 45,
-    marginLeft: 100,
+    marginLeft: 70,
   },
   backIcon: {
     color: color.blue,

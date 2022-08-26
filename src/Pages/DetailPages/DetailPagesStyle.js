@@ -23,10 +23,8 @@ const styles = StyleSheet.create({
     height: 200,
     width: 350,
   },
-  image_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
+  map_container: {
+    height: 250,
   },
   detayBox: {
     padding: 10,
@@ -83,7 +81,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
     width: 45,
     height: 45,
-    marginLeft: 100,
+    marginLeft: 70,
   },
   backIcon: {
     color: color.blue,

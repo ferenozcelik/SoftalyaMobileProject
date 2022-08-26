@@ -1,7 +1,16 @@
 import React, {useState} from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native';
 import styles from './TaskPagesStyle';
 import data from '../../../data.json';
+import MapView from 'react-native-maps';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import TaskComponent from './TaskComponent';
 
@@ -18,19 +27,28 @@ const TaskPages = ({navigation}) => {
   );
   return (
     <View style={styles.container}>
-      <View style={styles.bass}>
+      <View
+        style={styles.bass}
+        onPress={() => {
+          navigation.navigate('TaskDetail', {item: item});
+        }}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('LoginPages');
+          }}>
+          <Icon name="chevron-left" size={40} color="black" />
+        </TouchableOpacity>
         <Image
           style={styles.img}
           source={require('../../../assets/images/logok.png')}
         />
-        <Text style={styles.head_title}>Detaylar</Text>
+        <Text style={styles.head_title}>Görevler</Text>
       </View>
 
-      <View style={styles.image_container}>
-        <Image
-          style={styles.image}
-          source={require('../../../assets/images/map.png')}
-        />
+      <View style={styles.map_container}>
+        <SafeAreaView style={{flex: 1}}>
+          <MapView provider="google" style={{flex: 1}} />
+        </SafeAreaView>
       </View>
 
       <View style={{flex: 1}}>

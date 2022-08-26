@@ -19,17 +19,17 @@ const Router = () => {
         <Stack.Screen
           name="TaskPages"
           component={TaskPages}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="DetailPages"
           component={DetailPages}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="TaskDetail"
           component={TaskDetail}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
