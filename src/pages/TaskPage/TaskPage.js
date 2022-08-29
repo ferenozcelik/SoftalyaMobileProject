@@ -14,6 +14,7 @@ import styles from './TaskPage.style';
 import data from '../../../data.json';
 import TaskComponent from './TaskComponent';
 
+
 export default function TaskPage({navigation}) {
   const [list, setList] = useState(data);
   const handleProductSelect = item => {
