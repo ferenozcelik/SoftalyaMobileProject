@@ -18,30 +18,36 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     marginTop: 10,
+    height:200
   },
   image: {
     height: 200,
     width: 350,
   },
   map_container: {
-    height:250,
+    height: 250,
   },
   image2: {
     height: 40,
     width: 40,
-    marginLeft: 160,
+    marginLeft: 90,
   },
   header_logo: {
+    paddingTop:5,
+    height:50,
     justifyContent: 'flex-start',
     backgroundColor: 'white',
     flexDirection: 'row',
- 
   },
 
   backIcon: {
     color: colors.blue,
     marginLeft: 10,
-
+  },
+  text: {
+    color: colors.blue,
+    fontWeight: 'bold',
+    fontSize: 30,
   },
 });
 export default styles;

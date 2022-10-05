@@ -31,19 +31,16 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flexDirection: 'row',
     backgroundColor: 'white',
-  
-  
   },
   image2: {
     height: 40,
     width: 40,
     marginRight: 5,
-    marginLeft: 170,
-
-    
+    marginLeft: 140,
   },
   map_container: {
-    height:450,
+    height: 350,
+ 
   },
   box: {
     backgroundColor: 'white',
@@ -51,10 +48,10 @@ const styles = StyleSheet.create({
     height: 150,
     width: 360,
     margin: 15,
-    marginTop:1,
+    marginTop: 20,
     marginRight: 15,
     padding: 10,
-    marginBottom: 0,
+    marginBottom: 1,
     borderRadius: 30,
   },
   detay_title: {
@@ -64,6 +61,29 @@ const styles = StyleSheet.create({
   },
   detay: {
     fontSize: 20,
+  },
+  buttonWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  startRideButton: {
+    width: 170,
+    height: 50,
+    backgroundColor: colors.darkGreen,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginBottom: 5,
+  },
+  endRideButton: {
+    width: 170,
+    height: 50,
+    backgroundColor: colors.lightRed,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginBottom: 5,
   },
 });
 export default styles;

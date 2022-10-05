@@ -39,17 +39,16 @@ const DetailPages = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header_logo}>
-        <TouchableOpacity onPress={() => navigation.navigate('TaskPage')}>
+        <TouchableOpacity onPress={() => navigation.navigate('LoginPages')}>
           <Icon name="chevron-left" size={40} color="black" />
         </TouchableOpacity>
         <Image
           style={styles.image2}
           source={require('../../../assets/images/logo2.png')}
         />
+        <Text style={styles.text}> Detaylar</Text>
       </View>
-      <View style={styles.header}>
-        <Text style={styles.task_text}>Detaylar</Text>
-      </View>
+
       <View style={styles.map_container}>
         <SafeAreaView style={{flex: 1}}>
           <MapView provider="google" style={{flex: 1}}>
@@ -67,13 +66,12 @@ const DetailPages = ({navigation, route}) => {
         <TouchableOpacity
           style={styles.btn_k}
           onPress={() => navigation.navigate('MapPages', {item: item})}>
-          <Text style={styles.txt}>Kabul Et</Text>
+          <Text style={styles.txt}>Sürüşü Kabul Et</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btn_r}
-          onPress={() => {}}
-          title="Reddet">
-          <Text style={styles.txt_r}>Reddet</Text>
+          onPress={() => navigation.navigate('TaskPage', {item: item})}>
+          <Text style={styles.txt_r}>Sürüşü Reddet</Text>
         </TouchableOpacity>
       </View>
     </View>

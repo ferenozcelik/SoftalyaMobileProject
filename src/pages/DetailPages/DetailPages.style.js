@@ -83,16 +83,23 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     marginRight: 5,
-    marginLeft: 150,
+    marginLeft: 90,
   },
   header_logo: {
+    paddingTop:5,
     justifyContent: 'flex-start',
     flexDirection: 'row',
     backgroundColor: 'white',
+    height:50
   },
   backIcon: {
     color: colors.blue,
     marginLeft: 10,
   },
+  text:{
+    color:colors.blue,
+    fontWeight:'bold',
+    fontSize:30,
+  }
 });
 export default styles;
